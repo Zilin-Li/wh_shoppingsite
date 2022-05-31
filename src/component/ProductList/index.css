@@ -1,0 +1,15 @@
+.product-list{
+    max-width: 1280px;
+    height: 100%;
+    margin:10px auto;
+}
+.product-list_content{
+    display: grid;
+    grid-template-columns: minmax(0,1fr) minmax(0,1fr) minmax(0,1fr) minmax(0,1fr);
+    list-style-type: none;
+    padding: 0 8px 16px;
+    background-color: #f9f9f9;
+}
+
+
+

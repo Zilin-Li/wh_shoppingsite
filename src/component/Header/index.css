@@ -1,0 +1,33 @@
+header{
+    box-shadow: 1px 2px 4px #EAEAEA;
+  
+  }
+  .topside{
+    background-color: #41173F;
+    height: 4vh;
+  }
+  
+  .navBar{ 
+    height:12vh;  
+    margin:0 12%; 
+  }
+  .navBox{
+    height: 11vh;
+    line-height: 11vh;
+  }
+ 
+  .logoImg{
+   
+    display: inline-block;
+    width: 8vw;
+    vertical-align: middle;
+    
+  }
+ 
+  .icons{
+    background-color: aqua;
+  }
+  .wishlistheart{
+    margin-left: 100px;
+  }
+  

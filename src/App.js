@@ -1,25 +1,26 @@
-import logo from './logo.svg';
+import React, {Component} from 'react';
+import Header from './component/Header';
+import ProductList from './component/ProductList';
 import './App.css';
+import 'antd/dist/antd.min.css';
+import Data from './data.json'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  
+  state = {productInfo:Data.Products}
+  
+  render() { 
+    const {productInfo} =this.state
+    return (
+     
+      <div>
+         
+          <Header/>
+          <ProductList productInfo={productInfo}/> 
+      </div>
+      
+    );
+  }
 }
-
+ 
 export default App;
