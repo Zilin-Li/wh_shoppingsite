@@ -15,6 +15,9 @@ header{
     height: 11vh;
     line-height: 11vh;
   }
+  .iconList{
+    display: flex;
+  }
  
   .logoImg{
    

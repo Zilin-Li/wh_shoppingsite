@@ -6,8 +6,7 @@ import { HeartOutlined,HeartFilled} from '@ant-design/icons';
 
 class ProductItem extends Component {
     state={
-        imgUrl:this.props.product.images[0],
-        isWishlist: this.props.product.isWishlist
+        imgUrl:this.props.product.images[0],     
     }
 
     handleMouse =(imageURL)=>{
@@ -15,14 +14,13 @@ class ProductItem extends Component {
            this.setState({imgUrl:imageURL}) 
         }
     }
-    addToWishlist=()=>{
-        this.setState({isWishlist:!this.state.isWishlist})
-        console.log(this.state.isWishlist)     
+    handleWishlist=(id)=>{
+        this.props.updateWishList(id)
     }
     
     render() { 
-        const {imgUrl,isWishlist}=this.state
-        const {product} =this.props
+        const {imgUrl}=this.state
+        const {product,wishList} =this.props
         return (
             <div>
                 <li className="product-list_tile" >
@@ -32,8 +30,8 @@ class ProductItem extends Component {
                                 <img src={"images/"+imgUrl} alt="" className="product-tile_default-image" />
                             </div>
                             <div className="product-tile_attributes">
-                                <div className='product-tile_wishlist-icon' onClick={this.addToWishlist}> 
-                                    {isWishlist ? <HeartFilled style={{fontSize:16,color:'#41173F'}} />: <HeartOutlined style={{fontSize:16,color:'#41173F'}} />}   
+                                <div className='product-tile_wishlist-icon' onClick={()=>this.handleWishlist(product.id)} > 
+                                    { wishList.includes(product.id)? <HeartFilled style={{fontSize:16,color:'#41173F'}} />: <HeartOutlined style={{fontSize:16,color:'#41173F'}} />}   
                                 </div>    
                                 <div className="product-tile_badge">NEW IN</div>
                                 
